@@ -1,0 +1,63 @@
+from buildhat import *
+import time
+
+#####################################################################################################################################################
+
+
+csensor = ColorSensor('B')
+
+# uncomment to test lines of color sensor
+
+# while True:
+#     #print("Reflected" , csensor.get_reflected_light() )
+#     #print("Color", csensor.get_color() )
+#     #print("RGBI", csensor.get_color_rgbi() )
+
+
+#####################################################################################################################################################
+
+motor = Motor('A')
+
+#uncomment the lines what you want to run (to toggle comments directly from raspberry IDE, [Ctrl+3]
+
+
+# #you can set default speed of motor
+#motor.set_default_speed(50)
+
+
+
+# #you can also set up a function called whem motor is rotating (there's some bugs, don't use!!!)
+# def handle_motor(speed, pos, apos):
+#     print("Motor", speed, pos, apos) #pos = get position respect a preset position, apos = get absolute position (-180 to 180)
+#     
+# motor.when_rotated = handle_motor
+
+
+
+#run forever 
+# motor.start(50) #speed = 50 [revolutions/second]
+# time.sleep(10) #10 seconds test run
+# motor.stop()
+
+# #run for degrees 
+# motor.run_for_degrees(100,50) #degrees = 100° , speed = 50 [revolutions/second]
+
+# #run to absolute position
+# motor.run_to_position(0,50) #pos = 0° (motor has an absolute zero), speed = 50 [revolutions/second]
+# time.sleep(1) 
+# motor.run_to_position(180,50) #positions -180 to 180
+# time.sleep(1) 
+# motor.run_to_position(0,50)
+
+#####################################################################################################################################################
+
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+camera.start_preview(alpha=192)
+sleep(1)
+cmd=input("Press ENTER button to take a photo...")
+camera.capture("/home/pi/Desktop/pic.jpg")
+camera.stop_preview()
+
