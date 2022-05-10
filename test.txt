@@ -1,0 +1,13 @@
+def check_func(nome):
+	if nome == "pusher":
+		pusher()
+	if nome == "sensor":
+		sensor()
+	if nome == "conveyor":
+		conveyor()
+
+hardware = ["pusher","sensor","conveyor"]
+print(hardware[0])
+
+for obj in hardware:
+	print(obj)
