@@ -1,10 +1,13 @@
+'''QUESTO CODICE RESETTA LA POSIZIONE DEL PUSHER IN CASO DI MALFUNZIONAMENTI 
+    HARDWARE. PRIMA DI LANCIARLO POSIZIONARE IL MOTORE ALLO 0 E IL PUSHER
+    TUTTO DENTRO'''
 from buildhat import *
 import time
 #librerie da importare sempre
 
 #seleziono i motori
 
-motor = Motor ("C") #CONTROLLARE SE PORTA D
+motor = Motor ("C") #CONTROLLARE SE PORTA C
 #metto il motore nella posizione 0
 def push():
     motor.run_for_degrees(-270,50) #-270° va avanti a velocità 50
