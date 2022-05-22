@@ -7,7 +7,7 @@ import time
 
 #seleziono i motori
 
-motor = Motor ("C") #CONTROLLARE SE PORTA C
+motor = Motor ("D") #CONTROLLARE SE PORTA C
 #metto il motore nella posizione 0
 def push():
     motor.run_for_degrees(-270,50) #-270° va avanti a velocità 50
